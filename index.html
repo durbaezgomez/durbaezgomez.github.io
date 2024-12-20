@@ -4,49 +4,189 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dominik Urbaez Gomez | GitHub Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400&display=swap" rel="stylesheet">
     <style>
+        /* Global Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background: #f4f4f4;
+            background: #f5f5f7;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
+
+        a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #007aff;
+        }
+
+        h1, h2 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* Header */
         header {
-            background: #333;
-            color: #fff;
+            background: #fff;
+            color: #333;
+            padding: 6rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid #eee;
+            border-radius: 0 0 60px 60px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 3rem;
+        }
+
+        header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0.5rem 0;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            color: #555;
+        }
+
+        /* Main Section */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
             padding: 1rem 0;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
             text-align: center;
         }
-        main {
-            padding: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            background: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
-            color: #333;
-        }
+
+        /* Project Showcase */
         ul {
             list-style: none;
             padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
         }
+
         li {
-            margin: 1rem 0;
-        }
-        a {
-            text-decoration: none;
-            color: #0073e6;
-        }
-        footer {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 16px;
             text-align: center;
-            margin: 2rem 0;
-            font-size: 0.9em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        li:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        li p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 1rem;
+        }
+
+        li a {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #333;
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        li a:hover {
+            color: #007aff;
+        }
+
+        /* Footer */
+        footer {
+            background: #f5f5f7;
+            text-align: center;
+            padding: 3rem 1rem;
+            font-size: 1rem;
+            color: #333;
+            border-top: 5px solid #eee;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            font-weight: 500;
+            color: #007aff;
+        }
+
+        footer a:hover {
+            color: #0051b3;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section, li {
+            animation: fadeIn 1s ease;
+        }
+
+        /* Download CV Button */
+        .cv-button {
+            display: inline-block;
+            background-color: #007aff;
+            color: white;
+            padding: 0.75rem 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            border-radius: 50px;
+            margin-top: 2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .cv-button:hover {
+            background-color: #0051b3;
         }
     </style>
 </head>
 <body>
     <header>
+        <img src="https://avatars.githubusercontent.com/u/34062141?v=4" alt="Dominik's Profile Picture">
         <h1>Dominik Urbaez Gomez</h1>
         <p>iOS Developer | Automation & AI Enthusiast | Music Producer</p>
     </header>
@@ -54,31 +194,47 @@
         <section>
             <h2>About Me</h2>
             <p>
-                Hi, I'm Dominik, an iOS developer with over 5 years of experience building scalable, user-focused applications using Swift and modern architectures like MVVM and recently - TCA. In my free time, I explore automation tools and AI technologies, and I also produce music, blending technology with creativity.
+                I'm Dominik, an iOS developer with over 5 years of experience in building engaging applications. I specialize in Swift, MVVM architecture, and have explored TCA for scalable solutions. I have worked on various projects, including e-commerce apps (Żappka, House, Cropp, Rossmann), insurtech solutions (Bolttech) and commercial aviation (Avio).
             </p>
+            <p>
+                As I work toward establishing myself as a senior iOS developer, I am looking for opportunities to further deepen my expertise in mobile development, automation, and AI. 
+            </p>
+            <p>
+                When I'm not coding, I dive into automation and AI to simplify everyday tasks. Oh, and I also create music 🎶!
+            </p>
+            <!-- Download CV Button -->
+            <a href="https://www.dropbox.com/scl/fi/0iksmnzf15gn9g4n42g71/Dominik-Urbaez-Gomez-iOS-Developer-CV-2024-ENG.pdf?rlkey=9wcfrgko53eam0ulx80krdz4e&dl=1" class="cv-button" download>Download my CV!</a>
         </section>
         <section>
             <h2>Highlighted Repositories</h2>
             <ul>
                 <li>
-                    <a href="https://github.com/durbaezgomez/BudgetTracker" target="_blank">📌 BudgetTracker</a>
-                    <p>A simple iOS budget management app designed to help users track expenses and manage their finances effectively. Built with SwiftUI and leveraging The Composable Architecture (TCA).</p>
+                    <div style="font-size: 50px;">⚙️</div>
+                    <div>
+                        <a href="https://github.com/durbaezgomez/n8n-workflows" target="_blank">n8n Workflows</a>
+                        <p>Automate daily tasks and improve your workflow with custom n8n automations and integrations.</p>
+                    </div>
                 </li>
                 <li>
-                    <a href="https://github.com/durbaezgomez/VINSearch" target="_blank">📌 VINSearch</a>
-                    <p>A SwiftUI-based iOS application that allows users to search for vehicle details using a VIN (Vehicle Identification Number). It also keeps track of recent searches for quick reference.</p>
+                    <div style="font-size: 50px;">💻</div>
+                    <div>
+                        <a href="https://github.com/durbaezgomez/scripts" target="_blank">Scripts</a>
+                        <p>A collection of helpful scripts for automating tasks and improving your development workflow.</p>
+                    </div>
                 </li>
                 <li>
-                    <a href="https://github.com/durbaezgomez/n8n-workflows" target="_blank">📌 n8n-workflows</a>
-                    <p>A collection of workflows exploring and building powerful automations to simplify daily tasks and improve productivity using n8n.</p>
+                    <div style="font-size: 50px;">📊</div>
+                    <div>
+                        <a href="https://github.com/durbaezgomez/BudgetTracker" target="_blank">BudgetTracker</a>
+                        <p>Track your expenses with a clean, simple UI built in SwiftUI using TCA for scalable architecture.</p>
+                    </div>
                 </li>
                 <li>
-                    <a href="https://github.com/durbaezgomez/scripts" target="_blank">📌 Scripts</a>
-                    <p>A collection of useful scripts created and used regularly to streamline various tasks and enhance efficiency.</p>
-                </li>
-                <li>
-                    <a href="https://github.com/durbaezgomez/RESTClient" target="_blank">📌 RESTClient</a>
-                    <p>A simple SwiftUI-based REST API Client for iOS, developed as a recruitment task. It demonstrates CRUD operations fetching and displaying a list of products from an API, utilizing SwiftUI's app lifecycle and Combine for reactive programming.</p>
+                    <div style="font-size: 50px;">🚗</div>
+                    <div>
+                        <a href="https://github.com/durbaezgomez/VINSearch" target="_blank">VINSearch</a>
+                        <p>Quickly search and retrieve vehicle details using VIN. Built with SwiftUI for a seamless experience.</p>
+                    </div>
                 </li>
             </ul>
         </section>
